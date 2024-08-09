@@ -1,8 +1,9 @@
-# WorkoutPlanner Development Documentation
+# Workout Planner Development Documentation
 
 ## Project Overview
 The Workout Planner is a C# console application designed to help users create, customize, and manage their workout routines and nutritional information. 
 It features user authentication and integrates with external APIs to provide exercise and nutritional data.
+
 
 # Setup Instructions
 
@@ -18,12 +19,15 @@ cd WorkoutPlanner
 
 Ensure you have all required libraries, such as Newtonsoft.Json for JSON parsing.
 
-Create a database.json file in the root directory of the project. This file will store user data (a sample one is provided, feel free to overwrite).
+Create a `database.json` file in the root directory of the project. 
+This file will store user data (a sample one is provided, feel free to overwrite).
+
+
 
 ## Building the Project
 
 Project structure: 
-
+```
 /WorkoutPlanner
 ├── /bin                   # Compiled binaries
 ├── /obj                   # Temporary files
@@ -38,6 +42,7 @@ Project structure:
 ├── WorkoutPlanner.sln     # Visual Studio solution file
    . . .
 └── README.md              # Project README file
+```
 
 
 # Code Documentation
@@ -69,4 +74,5 @@ Represents a user in the workout planner system, including their saved exercises
 ### WorkoutDB
 Handles fetching workout exercises from the Workout API.
 
-For more detailed information see the documented code, or an XML documentation at `bin/debug/net5.0/WorkoutPlanner.xml`
+
+__For more detailed information see the documented code, or an XML documentation at `bin/debug/net5.0/WorkoutPlanner.xml`__

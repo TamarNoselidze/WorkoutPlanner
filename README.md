@@ -1,7 +1,7 @@
-# WorkoutPlanner
+# Workout Planner
 
 ## Introduction
-The Workout Planner is a Java-based console application designed to help users create, customize, and manage their workout routines and nutritional information. 
+The Workout Planner is a C#-based console application designed to help users create, customize, and manage their workout routines and nutritional information. 
 It features user authentication, allowing users to create accounts and log in to personalize their fitness plans. 
 The application integrates with external APIs to fetch general and tailored exercises based on muscle groups, equipment, and intensity levels. 
 Users can also retrieve and save detailed nutritional information, including BMI, caloric needs, and macronutrient recommendations. 
@@ -18,15 +18,15 @@ Future enhancements may include a graphical user interface and additional featur
 - Nutritional Information: Users can fetch and save detailed nutritional information, including BMI, caloric needs, macronutrients, minerals, and vitamins.
 
 
-## Getting Started
+# Getting Started
 
-# Requirements
+## Requirements
 
 - .NET SDK 6.0 or higher
 - Internet connection for API access
 
 
-# Setup and Installation
+## Setup and Installation
 
 1. Clone the Repository:
 
@@ -45,7 +45,7 @@ Future enhancements may include a graphical user interface and additional featur
     Open the project in Visual Studio and build the solution.
 
 
-# Execution
+## Execution
 
 In the root directory, run the application:
 ```
@@ -53,7 +53,7 @@ dotnet run
 ```
 
 
-## Usage
+# Usage
 
 ## Main Menu
 

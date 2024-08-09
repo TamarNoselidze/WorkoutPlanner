@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "/home/tamro/Desktop/C#/Workout-Planner/Workout-Planner.csproj": {}
+    "/home/tamro/Desktop/WorkoutPlanner/Workout-Planner.csproj": {}
   },
   "projects": {
-    "/home/tamro/Desktop/C#/Workout-Planner/Workout-Planner.csproj": {
+    "/home/tamro/Desktop/WorkoutPlanner/Workout-Planner.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/home/tamro/Desktop/C#/Workout-Planner/Workout-Planner.csproj",
+        "projectUniqueName": "/home/tamro/Desktop/WorkoutPlanner/Workout-Planner.csproj",
         "projectName": "Workout-Planner",
-        "projectPath": "/home/tamro/Desktop/C#/Workout-Planner/Workout-Planner.csproj",
+        "projectPath": "/home/tamro/Desktop/WorkoutPlanner/Workout-Planner.csproj",
         "packagesPath": "/home/tamro/.nuget/packages/",
-        "outputPath": "/home/tamro/Desktop/C#/Workout-Planner/obj/",
+        "outputPath": "/home/tamro/Desktop/WorkoutPlanner/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "/home/tamro/.nuget/NuGet/NuGet.Config"
