@@ -1,8 +1,5 @@
 using System;
-using System.Collections.Generic;
-using System.Net.Http;
 using Newtonsoft.Json.Linq;
-using Newtonsoft.Json;
 
 namespace WorkoutPlanner.Project
 {

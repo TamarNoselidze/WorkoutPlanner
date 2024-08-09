@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
 
 namespace WorkoutPlanner.Project
 {
@@ -18,7 +17,6 @@ namespace WorkoutPlanner.Project
             var planner = new WorkoutPlanner();
             planner.Run();
         }
-
 
         /// <summary>
         /// Runs the Workout Planner application, displaying the main menu and handling user input.
