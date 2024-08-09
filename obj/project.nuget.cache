@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "dgSpecHash": "gbVQ898Ymp/IwKu/vGa7ftVi2hHWxF0VvdnX6i7JOSopcSCDV9GZKFQ44AyquAMWGujANCKc8/zFgoRFlcV7Ww==",
+  "success": true,
+  "projectFilePath": "/home/tamro/Desktop/C#/Workout-Planner/Workout-Planner.csproj",
+  "expectedPackageFiles": [
+    "/home/tamro/.nuget/packages/newtonsoft.json/13.0.3/newtonsoft.json.13.0.3.nupkg.sha512"
+  ],
+  "logs": []
+}

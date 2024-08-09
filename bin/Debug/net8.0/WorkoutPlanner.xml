@@ -1,0 +1,311 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Workout-Planner</name>
+    </assembly>
+    <members>
+        <member name="T:WorkoutPlanner.Project.DatabaseHelper">
+            <summary>
+            Provides methods to interact with the user database, including loading, saving, registration, and login functionalities.
+            </summary>
+        </member>
+        <member name="F:WorkoutPlanner.Project.DatabaseHelper.DATABASE_FILE">
+            <summary>
+            The path to the database file that stores user information.
+            </summary>
+        </member>
+        <member name="F:WorkoutPlanner.Project.DatabaseHelper.users">
+            <summary>
+            A dictionary storing all registered users with their usernames as keys.
+            </summary>
+        </member>
+        <member name="M:WorkoutPlanner.Project.DatabaseHelper.#cctor">
+            <summary>
+            Static constructor that initializes the users dictionary by loading data from the database file.
+            </summary>
+        </member>
+        <member name="M:WorkoutPlanner.Project.DatabaseHelper.LoadUsers">
+            <summary>
+            Loads the users from the database file.
+            </summary>
+            <returns>A dictionary of users loaded from the database file.</returns>
+        </member>
+        <member name="M:WorkoutPlanner.Project.DatabaseHelper.SaveUsers(System.Collections.Generic.Dictionary{System.String,WorkoutPlanner.Project.User})">
+            <summary>
+            Saves the updated users dictionary to the database file.
+            </summary>
+            <param name="users">The dictionary of users to save.</param>
+        </member>
+        <member name="M:WorkoutPlanner.Project.DatabaseHelper.UpdateUserInfo(WorkoutPlanner.Project.User)">
+            <summary>
+            Updates the information of a given user in the database.
+            </summary>
+            <param name="user">The user whose information needs to be updated.</param>
+        </member>
+        <member name="M:WorkoutPlanner.Project.DatabaseHelper.LoginUser">
+            <summary>
+            Handles the user login process.
+            </summary>
+            <returns>
+            The logged-in user if successful; otherwise, returns null after three failed attempts.
+            </returns>
+        </member>
+        <member name="M:WorkoutPlanner.Project.DatabaseHelper.RegisterUser">
+            <summary>
+            Handles the user registration process.
+            </summary>
+            <returns>The newly registered user.</returns>
+        </member>
+        <member name="M:WorkoutPlanner.Project.DatabaseHelper.ObtainUsername">
+            <summary>
+            Prompts the user to enter a valid username.
+            </summary>
+            <returns>A valid username entered by the user.</returns>
+        </member>
+        <member name="M:WorkoutPlanner.Project.DatabaseHelper.ObtainPassword(System.String)">
+            <summary>
+            Prompts the user to enter a valid password.
+            </summary>
+            <param name="username">The username for which the password is being set.</param>
+            <returns>A valid password entered by the user.</returns>
+        </member>
+        <member name="T:WorkoutPlanner.Project.Exercise">
+            <summary>
+            Represents an exercise with properties such as name, targeted body part, equipment, and instructions.
+            </summary>
+        </member>
+        <member name="M:WorkoutPlanner.Project.Exercise.GetInstructions">
+            <summary>
+            Retrieves the instructions for performing the exercise as a formatted string.
+            </summary>
+            <returns>A string containing the exercise instructions.</returns>
+        </member>
+        <member name="M:WorkoutPlanner.Project.Exercise.DisplayExerciseInfoGeneral">
+            <summary>
+            Displays general information about the exercise.
+            </summary>
+        </member>
+        <member name="M:WorkoutPlanner.Project.Exercise.DisplayWorkoutInfo">
+            <summary>
+            Displays detailed information about the workout, including the muscle targeted, set/rep ranges, and instructions.
+            </summary>
+        </member>
+        <member name="M:WorkoutPlanner.Project.Exercise.DisplayMuscleList">
+            <summary>
+            Displays a list of available target muscles.
+            </summary>
+        </member>
+        <member name="M:WorkoutPlanner.Project.Exercise.DisplayEquipmentList">
+            <summary>
+            Displays a list of available equipment.
+            </summary>
+        </member>
+        <member name="M:WorkoutPlanner.Project.Exercise.IsTargetValid(System.String)">
+            <summary>
+            Validates if the given target muscle is in the list of available muscles.
+            </summary>
+            <param name="targetMuscle">The target muscle to validate.</param>
+            <returns>True if the target muscle is valid; otherwise, false.</returns>
+        </member>
+        <member name="M:WorkoutPlanner.Project.Exercise.IsEquipmentValid(System.String)">
+            <summary>
+            Validates if the given equipment is in the list of available equipment.
+            </summary>
+            <param name="equipment">The equipment to validate.</param>
+            <returns>True if the equipment is valid; otherwise, false.</returns>
+        </member>
+        <member name="M:WorkoutPlanner.Project.Exercise.GetMappedBodyPart(System.String)">
+            <summary>
+            Maps a user-specified body part to the corresponding category used by the application.
+            </summary>
+            <param name="userBodyPart">The body part specified by the user.</param>
+            <returns>The corresponding body part category if found; otherwise, null.</returns>
+        </member>
+        <member name="T:WorkoutPlanner.Project.ExerciseDB">
+            <summary>
+            Provides methods for interacting with the ExerciseDB API to fetch exercise data.
+            </summary>
+        </member>
+        <member name="M:WorkoutPlanner.Project.ExerciseDB.FetchExercises(System.String,System.String)">
+            <summary>
+            Fetches a list of exercises from the ExerciseDB API based on the target body part.
+            </summary>
+            <param name="target">The target body part to filter exercises (e.g., "arms").</param>
+            <param name="mappedTarget">The mapped target body part used in the API request (e.g., "upper-arm").</param>
+            <returns>A list of <see cref="T:WorkoutPlanner.Project.Exercise"/> objects that match the target criteria.</returns>
+        </member>
+        <member name="T:WorkoutPlanner.Project.NutritionalDB">
+            <summary>
+            The <see cref="T:WorkoutPlanner.Project.NutritionalDB"/> class handles fetching nutritional information
+            from the Nutrition Calculator API.
+            </summary>
+        </member>
+        <member name="M:WorkoutPlanner.Project.NutritionalDB.FetchNutritionalInfo(System.String,System.String,System.Int32,System.Int32,System.Int32,System.Int32,System.Int32,System.Int32,System.String)">
+            <summary>
+            Fetches nutritional information based on the provided parameters.
+            </summary>
+            <param name="measurementUnits">The measurement units, either "std" (standard) or "met" (metric).</param>
+            <param name="sex">The sex of the user, either "male" or "female".</param>
+            <param name="ageValue">The age of the user in years.</param>
+            <param name="feet">The height in feet (used if <paramref name="measurementUnits"/> is "std").</param>
+            <param name="inches">The height in inches (used if <paramref name="measurementUnits"/> is "std").</param>
+            <param name="lbs">The weight in pounds (used if <paramref name="measurementUnits"/> is "std").</param>
+            <param name="cm">The height in centimeters (used if <paramref name="measurementUnits"/> is "met").</param>
+            <param name="kilos">The weight in kilograms (used if <paramref name="measurementUnits"/> is "met").</param>
+            <param name="activityLevel">The activity level of the user.</param>
+            <returns>A <see cref="T:WorkoutPlanner.Project.NutritionalInfo"/> object containing the fetched nutritional information.</returns>
+        </member>
+        <member name="T:WorkoutPlanner.Project.NutritionalInfo">
+            <summary>
+            The <see cref="T:WorkoutPlanner.Project.NutritionalInfo"/> class holds the nutritional information data.
+            </summary>
+        </member>
+        <member name="M:WorkoutPlanner.Project.NutritionalInfo.DisplayNutritionalInfo">
+            <summary>
+            Displays the nutritional information retrieved.
+            </summary>
+        </member>
+        <member name="T:WorkoutPlanner.Project.User">
+            <summary>
+            Represents a user in the workout planner system, including their saved exercises
+            and nutritional information.
+            </summary>    
+        </member>
+        <member name="M:WorkoutPlanner.Project.User.#ctor(System.String,System.String)">
+            <summary>
+            Initializes a new instance of the <see cref="T:WorkoutPlanner.Project.User"/> class.
+            </summary>
+            <param name="username">The username of the user.</param>
+            <param name="password">The password of the user. In real applications, store hashed passwords, not plain text.</param>
+        </member>
+        <member name="M:WorkoutPlanner.Project.User.SaveExercise(WorkoutPlanner.Project.Exercise,System.Boolean)">
+            <summary>
+            Adds an exercise to the user's saved exercises and optionally prints a message.
+            </summary>
+            <param name="exercise">The exercise to be saved.</param>
+            <param name="workout">A flag indicating whether the exercise is part of a workout.</param>
+        </member>
+        <member name="M:WorkoutPlanner.Project.User.DisplayUserData">
+            <summary>
+            Displays the list of saved exercises to the console.
+            </summary>
+        </member>
+        <member name="M:WorkoutPlanner.Project.User.NumberOfExercises">
+            <summary>
+            Gets the number of saved exercises for the user.
+            </summary>
+            <returns>The number of saved exercises.</returns>
+        </member>
+        <member name="M:WorkoutPlanner.Project.User.GetExercise(System.Int32)">
+            <summary>
+            Retrieves an exercise from the list of saved exercises by index.
+            </summary>
+            <param name="index">The index of the exercise in the saved exercises list.</param>
+            <returns>The exercise at the specified index.</returns>
+        </member>
+        <member name="M:WorkoutPlanner.Project.User.SaveNutritionalInfo(WorkoutPlanner.Project.NutritionalInfo)">
+            <summary>
+            Saves the nutritional information for the user.
+            </summary>
+            <param name="info">The nutritional information to be saved.</param>
+        </member>
+        <member name="M:WorkoutPlanner.Project.User.HasNutritionalInfo">
+            <summary>
+            Checks if the user has nutritional information saved.
+            </summary>
+            <returns>True if nutritional information is saved; otherwise, false.</returns>
+        </member>
+        <member name="M:WorkoutPlanner.Project.User.GetNutritionalInfo">
+            <summary>
+            Retrieves the user's nutritional information.
+            </summary>
+            <returns>The nutritional information of the user.</returns>
+        </member>
+        <member name="T:WorkoutPlanner.Project.WorkoutDB">
+            <summary>
+            The <see cref="T:WorkoutPlanner.Project.WorkoutDB"/> class handles fetching workout exercises
+            from the Workout API.
+            </summary>
+        </member>
+        <member name="M:WorkoutPlanner.Project.WorkoutDB.FetchWorkouts(System.String,System.String,System.String)">
+            <summary>
+            Fetches workout exercises based on the provided parameters.
+            </summary>
+            <param name="muscles">The target muscle group for the workout.</param>
+            <param name="equipment">The equipment used for the workout (optional).</param>
+            <param name="intensityLevel">The intensity level of the workout (optional).</param>
+            <returns>A list of <see cref="T:WorkoutPlanner.Project.Exercise"/> objects containing the fetched workouts.</returns>
+        </member>
+        <member name="T:WorkoutPlanner.Project.WorkoutPlanner">
+            <summary>
+            The main class for the Workout Planner application.
+            Handles user registration, login, and requests for exercises and nutritional information.
+            </summary>
+        </member>
+        <member name="M:WorkoutPlanner.Project.WorkoutPlanner.Main(System.String[])">
+            <summary>
+            The main method to start the Workout Planner application.
+            </summary>
+            <param name="args">Command-line arguments</param>
+        </member>
+        <member name="M:WorkoutPlanner.Project.WorkoutPlanner.Run">
+            <summary>
+            Runs the Workout Planner application, displaying the main menu and handling user input.
+            </summary>
+        </member>
+        <member name="M:WorkoutPlanner.Project.WorkoutPlanner.DisplayMainMenu">
+            <summary>
+            Displays the main menu options to the user.
+            </summary>
+        </member>
+        <member name="M:WorkoutPlanner.Project.WorkoutPlanner.HandleRegistration">
+            <summary>
+            Handles the registration option, prompting the user to register and then handle new requests.
+            </summary>
+        </member>
+        <member name="M:WorkoutPlanner.Project.WorkoutPlanner.HandleLogin">
+            <summary>
+            Handles the login option, prompting the user to log in and then displaying the logged-in menu.
+            </summary>
+        </member>
+        <member name="M:WorkoutPlanner.Project.WorkoutPlanner.ShowLoggedInMenu(WorkoutPlanner.Project.User)">
+            <summary>
+            Displays the logged-in user menu and handles user options.
+            </summary>
+            <param name="user">The logged-in user.</param>
+        </member>
+        <member name="M:WorkoutPlanner.Project.WorkoutPlanner.HandleNewRequest(WorkoutPlanner.Project.User)">
+            <summary>
+            Handles new requests from the user.
+            </summary>
+            <param name="currentUser">The current logged-in user.</param>
+        </member>
+        <member name="M:WorkoutPlanner.Project.WorkoutPlanner.HandleFetching(System.String,WorkoutPlanner.Project.User)">
+            <summary>
+            Handles fetching exercises or workout routines based on user input.
+            </summary>
+            <param name="exerciseType">The type of exercise to fetch.</param>
+            <param name="currentUser">The current logged-in user.</param>
+        </member>
+        <member name="M:WorkoutPlanner.Project.WorkoutPlanner.DisplayFoundExercises(System.Collections.Generic.List{WorkoutPlanner.Project.Exercise},WorkoutPlanner.Project.User,System.Boolean)">
+            <summary>
+            Displays the list of found exercises and handles user interaction for saving exercises.
+            </summary>
+            <param name="exercises">The list of exercises to display.</param>
+            <param name="currentUser">The current logged-in user.</param>
+            <param name="workout">Indicates if the exercises are workout routines.</param>
+        </member>
+        <member name="M:WorkoutPlanner.Project.WorkoutPlanner.SaveExerciseMenu(WorkoutPlanner.Project.User,WorkoutPlanner.Project.Exercise,System.Boolean)">
+            <summary>
+            Handles details about a specific exercise, including the option to save it to user data.
+            </summary>
+            <param name="user">The current logged-in user.</param>
+        </member>
+        <member name="M:WorkoutPlanner.Project.WorkoutPlanner.GetNutritionalInfo(WorkoutPlanner.Project.User)">
+            <summary>
+            Fetches nutritional information for the user.
+            </summary>
+            <param name="user">The current logged-in user.</param>
+        </member>
+    </members>
+</doc>

@@ -1,0 +1,61 @@
+{
+  "tamara": {
+    "Username": "tamara",
+    "Password": "noselidze",
+    "SavedExercises": [
+      {
+        "Id": "0023",
+        "Name": "barbell alternate biceps curl",
+        "BodyPart": "upper arms",
+        "Equipment": "barbell",
+        "Target": "biceps",
+        "GifUrl": "https://v2.exercisedb.io/image/KGeKAMHiBRMDnX",
+        "SecondaryMuscles": [
+          "forearms"
+        ],
+        "Instructions": [
+          "Stand up straight with your feet shoulder-width apart and hold a barbell in each hand, palms facing forward.",
+          "Keep your upper arms stationary and exhale as you curl the weights while contracting your biceps.",
+          "Continue to raise the barbells until your biceps are fully contracted and the barbells are at shoulder level.",
+          "Hold the contracted position for a brief pause as you squeeze your biceps.",
+          "Inhale as you slowly begin to lower the barbells back to the starting position.",
+          "Repeat for the desired number of repetitions, alternating arms."
+        ],
+        "Muscle": null,
+        "Workout": null,
+        "IntensityLevel": null,
+        "BeginnerSets": null,
+        "IntermediateSets": null,
+        "ExpertSets": null,
+        "Explanation": null,
+        "LongExplanation": null,
+        "Video": null
+      }
+    ],
+    "NutritionalInfo": null
+  },
+  "Nodar": {
+    "Username": "Nodar",
+    "Password": "gagaga",
+    "SavedExercises": [],
+    "NutritionalInfo": null
+  },
+  "Khatuna": {
+    "Username": "Khatuna",
+    "Password": "bababa",
+    "SavedExercises": [],
+    "NutritionalInfo": null
+  },
+  "khatuna": {
+    "Username": "khatuna",
+    "Password": "babababababa",
+    "SavedExercises": [],
+    "NutritionalInfo": null
+  },
+  "kaskd": {
+    "Username": "kaskd",
+    "Password": "dsfjsdfdafdsa",
+    "SavedExercises": [],
+    "NutritionalInfo": null
+  }
+}
